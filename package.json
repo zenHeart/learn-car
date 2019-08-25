@@ -4,6 +4,7 @@
   "description": "**详细讲解考取驾照流程**",
   "main": "index.js",
   "scripts": {
+	"start":"docsify serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
