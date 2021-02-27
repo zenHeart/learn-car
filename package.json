@@ -4,10 +4,13 @@
   "description": "**详细讲解考取驾照流程**",
   "main": "index.js",
   "scripts": {
-	"start":"docsify serve",
+    "start": "docsify serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "zenheart <zenheart_register@163.com> (https://blog.zenheart.site/)",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "docsify-cli": "^4.4.2"
+  }
 }
