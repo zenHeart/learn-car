@@ -12,5 +12,10 @@
   "license": "ISC",
   "dependencies": {
     "docsify-cli": "^4.4.2"
+  },
+  "overrides": {
+    "dompurify": ">=3.2.4",
+    "marked": ">=4.0.10",
+    "got": ">=11.8.5"
   }
 }
