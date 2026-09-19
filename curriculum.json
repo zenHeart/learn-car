@@ -1,0 +1,338 @@
+{
+  "local_series": "learn-car",
+  "capabilities": [
+    {
+      "id": "car-fundamentals",
+      "title": "解释汽车电子电气架构的基本组成",
+      "outcome": "用一张图描述汽车 E/E 架构中的域控制器、总线、传感器与执行器的关系，并区分动力域、底盘域、车身域、ADAS 域和座舱域的边界"
+    },
+    {
+      "id": "car-networking",
+      "title": "选用车载总线协议",
+      "outcome": "根据带宽、实时性、可靠性与成本要求，在 CAN、LIN、FlexRay、车载以太网之间作出有依据的选型，并用报文示例说明 CAN 帧结构"
+    },
+    {
+      "id": "infotainment",
+      "title": "解释车机系统（IVI）的分层与启动链路",
+      "outcome": "从 Bootloader、Hypervisor、QNX/Linux/Android Automotive OS 到应用框架，串通一次冷启动过程并指出语音/导航/媒体各自运行在哪一层"
+    },
+    {
+      "id": "adas",
+      "title": "区分 ADAS 等级与感知决策链路",
+      "outcome": "按 SAE J3016 区分 L0–L5，并能描述一次 AEB 自动紧急刹车的感知融合、决策与执行链路及失效模式"
+    },
+    {
+      "id": "ev-system",
+      "title": "解释电动汽车三电系统",
+      "outcome": "说出电池、电机、电控 BMS 的核心参数与互锁关系，并解释 SOC、SOH、单体一致性与热管理的工程权衡"
+    },
+    {
+      "id": "capstone-telematics",
+      "title": "实现最小车联网远程诊断回路",
+      "outcome": "基于 TBOX、TSP 云、4G/5G 与 OTA，串通一次远程诊断数据从车端上行到云端再到手机 App 的回路，并指出其中至少两个安全风险"
+    }
+  ],
+  "sources": [
+    {
+      "id": "iso-11898-1",
+      "url": "https://www.iso.org/standard/63648.html",
+      "locator": "ISO 11898-1:2015 Road vehicles — Controller area network (CAN) — Part 1: Data link layer and physical signalling",
+      "accessed_at": "2026-09-20",
+      "scope": "CAN 总线数据链路层与物理层规范的权威依据"
+    },
+    {
+      "id": "sae-j1939",
+      "url": "https://www.sae.org/standards/content/j1939_202008/",
+      "locator": "SAE J1939 — Recommended Practice for Serial Control and Communications Heavy Duty Vehicle Network",
+      "accessed_at": "2026-09-20",
+      "scope": "商用车 CAN 高层协议的权威依据"
+    },
+    {
+      "id": "sae-j3016",
+      "url": "https://www.sae.org/standards/content/j3016_202104/",
+      "locator": "SAE J3016 — Taxonomy and Definitions for Terms Related to Driving Automation Systems for On-Road Motor Vehicles",
+      "accessed_at": "2026-09-20",
+      "scope": "L0–L5 驾驶自动化分级的权威定义"
+    },
+    {
+      "id": "autosar-classic",
+      "url": "https://www.autosar.org/fileadmin/standards/classic/21-11/AUTOSAR_EXP_ClassicPlatformRelease.pdf",
+      "locator": "AUTOSAR Classic Platform Release R21-11",
+      "accessed_at": "2026-09-20",
+      "scope": "汽车 ECU 软件分层架构与基础软件规范的行业事实标准"
+    },
+    {
+      "id": "android-automotive",
+      "url": "https://source.android.com/docs/automotive",
+      "locator": "Android Automotive OS — Architecture and car-specific framework",
+      "accessed_at": "2026-09-20",
+      "scope": "Android Automotive 与 Android Auto 的边界与 IVI 应用框架"
+    },
+    {
+      "id": "qnx-sdp",
+      "url": "https://www.qnx.com/products/neutrino-rtos/",
+      "locator": "QNX Neutrino RTOS — Safety, security, and virtualization for digital cockpits",
+      "accessed_at": "2026-09-20",
+      "scope": "座舱 Hypervisor 与仪表实时域的行业事实参考"
+    },
+    {
+      "id": "ieee-100base-t1",
+      "url": "https://standards.ieee.org/ieee/802.3bw/5697/",
+      "locator": "IEEE 802.3bw-2015 — 100BASE-T1 Single Twisted Pair Ethernet",
+      "accessed_at": "2026-09-20",
+      "scope": "车载 100Mbps 单对双绞线以太网的物理层规范"
+    },
+    {
+      "id": "gb-18384",
+      "url": "https://openstd.samr.gov.cn/bzgk/std/newGbzjDetail?jcno=5DA1A0CC3D5C46E0E3DCDDF58A0FCAF8",
+      "locator": "GB 18384.3-2020 电动汽车安全要求 第3部分：人员触电防护",
+      "accessed_at": "2026-09-20",
+      "scope": "电动汽车高压安全的中国国家标准"
+    },
+    {
+      "id": "3gpp-tc-37",
+      "url": "https://www.3gpp.org/dynareport/37900.htm",
+      "locator": "3GPP TS 37.900 — Multi-mode UE issues; the cellular V2X side",
+      "accessed_at": "2026-09-20",
+      "scope": "C-V2X 通信与车联网远程通信的事实参考"
+    }
+  ],
+  "series": [
+    {
+      "id": "learn-car",
+      "repository": "https://example.org/learn-car",
+      "revision": "working-tree",
+      "entry": "README.md",
+      "capability_refs": [
+        "car-fundamentals",
+        "car-networking",
+        "infotainment",
+        "adas",
+        "ev-system",
+        "capstone-telematics"
+      ]
+    }
+  ],
+  "roles": [
+    {
+      "id": "vehicle-systems-engineer",
+      "title": "车载系统入门工程师",
+      "responsibility": "从零开始能读懂汽车 E/E 架构图、独立选择车载总线、解释车机冷启动链路、说出 ADAS 分级与 AEB 链路、解释三电核心参数并串通一次远程诊断回路",
+      "task_refs": [
+        "fundamentals-arch-map",
+        "networking-can-frame",
+        "ivi-cold-boot",
+        "adas-aeb-link",
+        "ev-bms-tradeoff",
+        "telematics-roundtrip"
+      ],
+      "requirements": [
+        {
+          "logic": "any",
+          "capability_refs": [
+            "car-fundamentals",
+            "car-networking",
+            "infotainment",
+            "adas",
+            "ev-system",
+            "capstone-telematics"
+          ],
+          "source_refs": [
+            "iso-11898-1",
+            "sae-j1939",
+            "sae-j3016",
+            "autosar-classic",
+            "android-automotive",
+            "qnx-sdp",
+            "ieee-100base-t1",
+            "gb-18384",
+            "3gpp-tc-37"
+          ]
+        }
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "fundamentals-arch-map",
+      "owner": "learn-car",
+      "title": "绘制汽车 E/E 架构域图",
+      "kind": "analysis",
+      "task": "在白纸上画出动力域、底盘域、车身域、ADAS 域、座舱域五个域控制器，并标注它们之间最常用的总线类型与至少一个传感器/执行器",
+      "constraints": [
+        "不查表先凭直觉画一遍，再对照 AUTOSAR/SAE 修正",
+        "至少包含 1 路 CAN、1 路车载以太网、1 路 LIN"
+      ],
+      "deliverables": [
+        "手绘/工具绘制的架构图（PNG 或 SVG）",
+        "每个域的关键控制器型号或家族（如 NXP S32K、Renesas R-Car）"
+      ],
+      "acceptance": [
+        "五个域边界与命名与业界事实一致",
+        "总线选型给出带宽与延迟量级而不是只写名称",
+        "指出至少一处跨域耦合（如车身域控制车门同时上报到座舱域显示）"
+      ],
+      "environment": "纸笔或任意绘图工具；当前章节提供图文先例",
+      "entry": "docs/chapters/01-fundamentals.md",
+      "transfer": "把整车简化为四域（合并车身与座舱）后重画，并说明合并后哪些跨域消息失去域内自治",
+      "delayed_check": "一周后无提示画出 2026 年典型中央计算+区域控制器（zonal）架构对比",
+      "provenance": "designed",
+      "capability_refs": ["car-fundamentals"],
+      "source_refs": ["autosar-classic"],
+      "prerequisite_refs": [],
+      "verification": "not-run"
+    },
+    {
+      "id": "networking-can-frame",
+      "owner": "learn-car",
+      "title": "解析一帧 CAN 报文",
+      "kind": "analysis",
+      "task": "给出一帧真实 CAN 数据（例如 0x18DAF110 0x10 0x02 0x03），指出仲裁 ID 的优先级含义、数据长度码（DLC）和数据场，并把它转回 J1939 PGN",
+      "constraints": [
+        "先闭卷解释仲裁优先级与线与机制",
+        "再使用 ISO 11898-1 与 SAE J1939 校验"
+      ],
+      "deliverables": [
+        "逐字段标注的 CAN 帧分析",
+        "对应的 J1939 PGN 与 SPN 解析"
+      ],
+      "acceptance": [
+        "正确指出 0x18DAF110 的源地址（0x10）与目标地址（0xF1 广播）",
+        "说明 CAN 总线在两节点同时发送时如何通过 ID 位决出胜负",
+        "提出至少一种该报文在多 ECU 总线竞争场景下的失效模式"
+      ],
+      "environment": "任意 CAN 分析工具（如 SocketCAN、Wireshark+canfd）或纸笔仿真",
+      "entry": "docs/chapters/02-networking.md",
+      "transfer": "把同一报文放到车载以太网（SomeIP）上传输，对比带宽、延迟与协议栈开销",
+      "delayed_check": "两周后给一段 CAN 录制（Vector ASC 或 candump 文本），无提示完成解析",
+      "provenance": "designed",
+      "capability_refs": ["car-networking"],
+      "source_refs": ["iso-11898-1", "sae-j1939"],
+      "prerequisite_refs": ["car-fundamentals"],
+      "verification": "not-run"
+    },
+    {
+      "id": "ivi-cold-boot",
+      "owner": "learn-car",
+      "title": "追车机冷启动链路",
+      "kind": "analysis",
+      "task": "从按下车辆电源那一刻起，按时间顺序列出 IVI 主机的 Bootloader、Secure Boot、Hypervisor、Guest OS（仪表 QNX + 座舱 Android Automotive）、HMI 框架、应用首次渲染完成的全过程",
+      "constraints": [
+        "区分 TrustZone/Hypervisor 与 Guest OS 的边界",
+        "指出每一步的失败后果（黑屏、SOC 异常、语音无响应）"
+      ],
+      "deliverables": [
+        "时间线 + 关键组件清单",
+        "至少一个真实车机平台（如高通 SA8155 / 8295）作为参照"
+      ],
+      "acceptance": [
+        "完整覆盖从 MCU 复位向量到 HMI 首帧的链路",
+        "指出 QNX 与 Android Automotive 在同一 SoC 下的资源隔离机制",
+        "给出冷启动 8s 内必须看到 HMI 这一硬约束的设计影响"
+      ],
+      "environment": "纸笔或 Markdown 时序图；如条件允许可在开发板上用示波器测量 PMU 复位到 HDMI 输出延迟",
+      "entry": "docs/chapters/03-infotainment.md",
+      "transfer": "把同一链路放到国产座舱芯片（如芯擎 SE1000 或华为 MDC）上，指出差异",
+      "delayed_check": "10 天后无提示重画冷启动链路并指出与首次笔记的差异",
+      "provenance": "designed",
+      "capability_refs": ["infotainment"],
+      "source_refs": ["qnx-sdp", "android-automotive"],
+      "prerequisite_refs": ["car-fundamentals", "car-networking"],
+      "verification": "not-run"
+    },
+    {
+      "id": "adas-aeb-link",
+      "owner": "learn-car",
+      "title": "追踪一次 AEB 自动刹车链路",
+      "kind": "analysis",
+      "task": "在前车以 30 km/h、相对距离 60 m、本车以 50 km/h 巡航的场景下，描述毫米波雷达与前视摄像头如何融合出一个目标列表，规划控制单元如何生成减速度请求，线控制动 ESC/iBooster 如何执行",
+      "constraints": [
+        "先闭卷预测每个环节的延迟量级",
+        "再对照 SAE J3016 关于 DDT fallback 的定义"
+      ],
+      "deliverables": [
+        "链路图与每段延迟预算",
+        "至少一种典型失效模式（如雷达遮挡、摄像头逆光、ESC 失效）"
+      ],
+      "acceptance": [
+        "明确指出 AEB 属于 SAE L1（持续横向或纵向控制）而非 L2",
+        "给出感知融合中目标关联（track-to-track）的基本算法",
+        "指出当驾驶员突然接管时的最小切换时间（TTI）要求"
+      ],
+      "environment": "任意仿真工具（MATLAB/Simulink、CARLA）或纸笔链路图",
+      "entry": "docs/chapters/04-adas.md",
+      "transfer": "把场景换成夜间雨天雾天，对比相同链路下的探测距离退化",
+      "delayed_check": "一个月后无提示重画 AEB 链路并标注与首次笔记的差异",
+      "provenance": "designed",
+      "capability_refs": ["adas"],
+      "source_refs": ["sae-j3016"],
+      "prerequisite_refs": ["car-fundamentals", "car-networking"],
+      "verification": "not-run"
+    },
+    {
+      "id": "ev-bms-tradeoff",
+      "owner": "learn-car",
+      "title": "解释 BMS 三电权衡",
+      "kind": "reasoning",
+      "task": "在 70 kWh 三元锂电池包、350 V 平台、1C/2C 快充场景下，给出 SOC 估算（安时积分 + OCV 校正）、SOH 评估（容量保持率 + 内阻增长）、单体一致性均衡（被动/主动）三个子系统的工程取舍",
+      "constraints": [
+        "先独立预测 SOC 误差会因何累积",
+        "再用 GB 18384 与电池厂商 SPEC 验证"
+      ],
+      "deliverables": [
+        "SOC/SOH/均衡三个子模块的参数表",
+        "热管理与单体一致性之间的耦合关系图"
+      ],
+      "acceptance": [
+        "指出 1C 快充下 BMS 末端 SOC 估算误差 ≤3% 的实现路径",
+        "解释为何 SOH 在低温环境下需要分段估算",
+        "指出至少一处被动均衡（电阻放电）带来的能量浪费与缓解策略"
+      ],
+      "environment": "纸笔或电池建模工具（如 PyBaMM、MATLAB Simscape Battery）",
+      "entry": "docs/chapters/05-ev-system.md",
+      "transfer": "把平台换成 800 V + 4C 快充（如现代 E-GMP 或保时捷 Taycan），重新校准每个子系统的延迟",
+      "delayed_check": "两周后无提示重画 SOC/SOH 算法并指出与首次笔记的差异",
+      "provenance": "designed",
+      "capability_refs": ["ev-system"],
+      "source_refs": ["gb-18384"],
+      "prerequisite_refs": ["car-fundamentals"],
+      "verification": "not-run"
+    },
+    {
+      "id": "telematics-roundtrip",
+      "owner": "learn-car",
+      "title": "车端—TSP—手机 App 远程诊断回路",
+      "kind": "build",
+      "task": "用树莓派 + TBOX 模拟器（TCP/MQTT）+ 一个轻量 TSP（FastAPI 或 Node）+ 手机 H5 页面，串通一次远程诊断：车端 DTC（U0100 通信丢失）—TSP 接收—App 推送—用户点击查看详情—下发远程命令清除 DTC",
+      "constraints": [
+        "禁止使用真实车辆，使用 CAN 模拟或预录报文",
+        "必须使用 TLS 与设备证书"
+      ],
+      "deliverables": [
+        "可运行的代码仓库与启动脚本",
+        "至少 1 张 DTC 链路时序图",
+        "至少 2 处安全风险分析与缓解（证书、私钥、命令鉴权）"
+      ],
+      "acceptance": [
+        "DTC 从车端到 App 端到端延迟 ≤5 s",
+        "App 推送命令到车端执行 ≤3 s",
+        "在断网/弱网条件下有明确的降级行为（缓存、重试、退避）"
+      ],
+      "environment": "macOS/Linux 开发机 + Docker + ngrok 或自有域名；3GPP 协议层引用作为依据",
+      "entry": "docs/chapters/06-capstone.md",
+      "transfer": "把链路改成 OTA（远程刷写 ECU），并指出与诊断链路共享哪些安全基础设施",
+      "delayed_check": "一个月后无提示独立搭建第二个 TSP 并完成一次完整回路",
+      "provenance": "designed",
+      "capability_refs": ["capstone-telematics"],
+      "source_refs": ["3gpp-tc-37"],
+      "prerequisite_refs": [
+        "car-fundamentals",
+        "car-networking",
+        "infotainment",
+        "adas",
+        "ev-system"
+      ],
+      "verification": "not-run"
+    }
+  ]
+}
