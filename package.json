@@ -11,6 +11,6 @@
   "author": "zenheart <zenheart_register@163.com> (https://blog.zenheart.site/)",
   "license": "ISC",
   "dependencies": {
-    "docsify-cli": "^4.4.2"
+    "docsify-cli": "^5.0.0"
   }
 }
